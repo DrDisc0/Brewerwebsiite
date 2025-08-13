@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Project | C. Brewer & Associates</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Optional external CSS -->
+    <style>
+        /* CSS Reset and Styles */
+        html, body {
+            height: 100%; /* Ensure full height */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #2f4f4f;
+            color: #fff;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            min-height: 150px; /* Use min-height instead */
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            height: 120px; /* Adjust logo height */
+            margin-right: 15px; /* Add space between the logo and title */
+        }
+        .header-title {
+            margin: 0; /* Remove margin for perfect centering */
+            text-align: center; /* Ensure title is centered */
+        }
+        nav {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the links horizontally */
+            background: #36454f; /* Background color of the navigation bar */
+        }
+        nav a {
+            color: #fff; /* Text color for links */
+            padding: 1rem; /* Padding around the links */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold text */
+        }
+        nav a:hover {
+            background: #2f4f4f; /* Background color on hover */
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 1.5rem; /* Space between items */
+        }
+        .project-gallery img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .project-description, .client-testimonial {
+            margin: 2rem 0;
+        }
+        .client-testimonial {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-left: 5px solid #2f4f4f;
+        }
+        footer {
+            background: #2f4f4f;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="assets/img/C Brewer LOGO .jpg" alt="C. Brewer and Associates Logo">
+        <h1 class="header-title">C. Brewer & Associates</h1>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html" style="display: block; text-align: center; width: 100%;">Home</a>
+</nav>
+
+<div class="container">
+    <!-- Project content goes here -->
+    <h2><u>Bloomfield Hills - Private Residence</u></h2>
+
+    <!-- Project Gallery -->
+    <div class="project-gallery">
+        <img src="assets/img/BF1.jpg" alt="Front View of the House" onclick="openModal(this.src)">
+        <img src="assets/img/BFplans.png" alt="Plans for the house" onclick="openModal(this.src)">
+        <img src="assets/img/BF2.JPG" alt="Back View of the House" onclick="openModal(this.src)">
+    </div>
+
+    <!-- Project Description -->
+    <div class="project-description">
+        <h3>Project Overview</h3>
+        <p>Collaborating with an associate, who's an amazing designer, C Brewer & Associates was contracted to field measure and draw the existing conditions of a mid century house both interior and exterior.  These drawings provided the designer "background" drawings so she could provide design alternatives for potential floor plan changes, furniture layouts, and interior and exterior finish / material changes.  </p>
+    </div>
+
+    <!-- Client Testimonial -->
+    <div class="client-testimonial">
+        <h3>Client Testimonial</h3>
+        <p>"C Brewer & Associates set up an appointment, around our schedule and quickly provided our interior designer the drawings she needed. "</p>
+    </div>
+
+    <h2><u>Birmingham - Private Residence</u></h2>
+
+    <!-- Project Gallery -->
+    <div class="project-gallery">
+        <img src="assets/img/BHfront.JPG" alt="Front of House" onclick="openModal(this.src)">
+        <img src="assets/img/BHbehind.jpg" alt="Side of House" onclick="openModal(this.src)">
+        <img src="assets/img/BHSide.jpg" alt="Behind House" onclick="openModal(this.src)">
+        <img src="assets/img/Elevations.png" alt="Section Plan" onclick="openModal(this.src)">
+        <img src="assets/img/Floorplan.png" alt="Floor Plan" onclick="openModal(this.src)">
+        <img src="assets/img/Section.png" alt="Elevations Plan" onclick="openModal(this.src)">
+    </div>
+
+    <!-- Project Description -->
+    <div class="project-description">
+        <h3>Project Overview</h3>
+        <p>While working in our industry we work with a variety of design professionals, trades people and contractors.  A general contractor who has built out a number of commercial projects was looking for a referral to do renovation drawings for his house in Birmingham.  After meeting with both him and his wife C Brewer & Associates was contracted to do design drawings and then construction drawings for plan review and permits.  This project scope was to renovate the existing house as well as add an addition to all three floors, basement, first floor and upper floor.  As the project progressed, the scope increased to rework the outdoor spaces, patios, pergola, and gardens. The clients also decided to update the garage and add a second floor.
+
+            The client, being a contractor, did the majority of work himself.  While working on this project in Birmingham, we began working with the clients designing their "dream house" in Sedona, AZ</p>
+    </div>
+
+    <!-- Client Testimonial -->
+    <div class="client-testimonial">
+        <h3>Client Testimonial</h3>
+        <p>"I worked with Chuck on commercial projects. My wife and I were happy to learn he was able to help us with our own house drawings the city required for permits."</p>
+        <p></p>
+    </div>
+
+    <h2><u>Edo Ramen</u></h2>
+
+    <!-- Project Gallery -->
+    <div class="project-gallery">
+        <img src="assets/img/C.jpg" alt="Edo Ramen Exterior" onclick="openModal(this.src)">
+        <img src="assets/img/A.jpg" alt="Interior of Edo Ramen " onclick="openModal(this.src)">
+        <img src="assets/img/D.jpg" alt="Edo Ramen Floor Plans" onclick="openModal(this.src)">
+    </div>
+
+    <!-- Project Description -->
+    <div class="project-description">
+        <h3>Project Overview</h3>
+        <p>Edo Ramen sought to create a modern, welcoming dining space that embodied the warmth of traditional Japanese design while adhering to a strict budget. C. Brewer & Associates collaborated closely with the restaurant’s team and an innovative designer to deliver a cost-effective yet impactful solution.</p>
+    </div>
+
+    <!-- Client Testimonial -->
+    <div class="client-testimonial">
+        <h3>Client Testimonial</h3>
+        <p>"We had a very tight budget. Our designer working with C Brewer & Associates used simple and cost effective materials to make our space feel comfortable, inviting and with just the right amount of POP."</p>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+</div>
+
+<section id="contact" class="container">
+    <h2 class="section-title" style="text-align: center;">Contact Information</h2>
+    <p style="text-align: center; font-size: 1.2rem;">
+        For inquiries, please contact Chuck Brewer directly at:<br>
+        <strong>Phone:</strong> <a href="tel:5868228619" style="color: #2f4f4f; text-decoration: none;">586-822-8619</a><br>
+        <strong>Email:</strong> <a href="mailto:brewerchuck10@gmail.com" style="color: #2f4f4f; text-decoration: none;">brewerchuck10@gmail.com</a>
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2024 C. Brewer & Associates. All rights reserved.</p>
+</footer>
+
+<button id="backToTop" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; padding: 10px 15px; background: #2f4f4f; color: white; border: none; border-radius: 5px; cursor: pointer;">Top</button>
+
+
+
+<script>
+    // Modal functionality
+    function openModal(src) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("modalImage").src = src;
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of the image
+    window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
